@@ -7,7 +7,7 @@ const isDocker = (() => {
   if (process.platform !== 'linux') { return false; }
   try {
     return (
-      new RegExp(`[0-9]+\:[a-z_-]+\:\/docker\/${hostname()}[0-9a-z]+`, 'i')
+      new RegExp(`[0-9]+\:[a-z_-]+\:\/kubepods\/${hostname()}[0-9a-z]+`, 'i')
     ).test(
       execSync(
         'cat /proc/self/cgroup',
